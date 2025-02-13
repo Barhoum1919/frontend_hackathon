@@ -1,0 +1,79 @@
+/* General Styling */
+.container {
+    max-width: 1200px;
+  }
+  
+  /* User Info Card */
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* User Profile Section */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Button Styling */
+  .btn-primary {
+    background: #ff4f5a;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background: #e63946;
+  }
+  
+  /* Trending Videos Section */
+  h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* TikTok Video Cards */
+  iframe {
+    border-radius: 8px;
+  }
+  
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
+  
+  /* Form Inputs */
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: border 0.3s ease-in-out;
+  }
+  
+  .form-control:focus {
+    border-color: #ff4f5a;
+    box-shadow: 0px 0px 8px rgba(255, 79, 90, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .col-md-4 {
+      width: 100%;
+    }
+  }
+  

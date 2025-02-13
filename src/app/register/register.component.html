@@ -1,0 +1,130 @@
+<div class="col-lg-4 col-md-12 wow fadeInUp" style="margin: 0 auto; margin-top: 5%;">
+    <form [formGroup]="registerform" (ngSubmit)="submit()">
+      <div class="row g-3">
+        <!-- Title -->
+        <div class="col-md-12">
+          <h1 style="text-align: center;">Register Now!</h1>
+        </div>
+  
+        <!-- Name -->
+        <div class="col-md-12">
+          <div class="form-floating field-animation">
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control"
+              id="name"
+              placeholder="Name"
+            />
+            <label for="name">Name</label>
+        
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="col-md-12">
+          <div class="form-floating field-animation">
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+            />
+            <label for="email">Email</label>
+        
+          </div>
+        </div>
+  
+        <!-- Company Name -->
+        <div class="col-md-12">
+          <div class="form-floating field-animation">
+            <input
+              type="text"
+              formControlName="company_name"
+              class="form-control"
+              id="company_name"
+              placeholder="Company Name"
+            />
+            <label for="company_name">Company Name</label>
+         
+          </div>
+        </div>
+  
+        <!-- Company Description -->
+        <div class="col-md-12">
+          <div class="form-floating field-animation">
+            <textarea
+              class="form-control"
+              formControlName="company_description"
+              placeholder="Describe your company"
+              id="company_description"
+              style="height: 150px"
+            ></textarea>
+            <label for="company_description">Describe Your Company Products and Services</label>
+          
+          </div>
+        </div>
+  
+        <!-- Preferences -->
+        <div class="col-md-12">
+          <label for="preferences">Preferences</label>
+          <div class="form-floating field-animation">
+            <div class="form-check">
+              <input type="checkbox" (change)="onCheckboxChange($event)" value="news" id="news" class="form-check-input" />
+              <label class="form-check-label" for="news">News</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" (change)="onCheckboxChange($event)" value="comedy" id="comedy" class="form-check-input" />
+              <label class="form-check-label" for="comedy">Comedy</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" (change)="onCheckboxChange($event)" value="drama" id="drama" class="form-check-input" />
+              <label class="form-check-label" for="drama">Drama</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" (change)="onCheckboxChange($event)" value="music" id="music" class="form-check-input" />
+              <label class="form-check-label" for="music">Music</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" (change)="onCheckboxChange($event)" value="sports" id="sports" class="form-check-input" />
+              <label class="form-check-label" for="sports">Sports</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" (change)="onCheckboxChange($event)" value="trends" id="trends" class="form-check-input" />
+              <label class="form-check-label" for="trends">Trends</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" (change)="onCheckboxChange($event)" value="dances" id="dances" class="form-check-input" />
+              <label class="form-check-label" for="dances">Dances</label>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Password -->
+        <div class="col-12">
+          <div class="form-floating field-animation">
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control"
+              id="password"
+              placeholder="Password (min length 6, should contain upper and lower alphabets, numeric and non-alphanumeric)"
+            />
+            <label for="password">Password</label>
+           
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="col-12">
+          <button class="btn btn-danger w-100 py-3" type="submit" >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </form>
+  
+    <p style="margin-top: 2%;">Already have an Account? <a class="text-danger" routerLink="/login">Login</a></p>
+  </div>
+  

@@ -1,0 +1,145 @@
+:root {
+    --primary: #f8d7da;
+    --light: #F0FBFC;
+    --dark: #181d38;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #181d38; 
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: red; 
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+    height: 75px;
+}
+.navbar {
+    opacity: 1; 
+    transition: opacity 2s ease-in-out, background-color 5s ease-in-out; 
+    z-index: 1030;
+}
+
+
+.navbar-light.sticky-top {
+    top: 0; 
+    opacity: 1; /* Set opacity to 1 when sticky */
+    background-color: white; /* Change background color when sticky */
+}
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+/*** Button ***/
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    color: #f8d7da;
+    
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+    
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+.mat-menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+  
+  .mat-menu-item i {
+    margin-left: 8px;
+  }
+  .btn-group:hover .dropdown-menu {
+    display: block;
+   
+  }
+  .dropdown-item.bg-danger {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .custom-dropdown {
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 100% !important; /* Aligns directly under button */
+    left: 0 !important; /* Aligns to the left edge of button */
+    border-radius: 0;
+    box-shadow: none; /* Optional: Removes extra shadow */
+  }
+  
+  .custom-dropdown .dropdown-item {
+    padding: 10px 15px; /* Adjust padding for better alignment */
+  }
+  .custom-dropdown .dropdown-item:active,
+.custom-dropdown .dropdown-item:focus {
+  background-color: #dc3545 !important;
+  color: white !important;
+}

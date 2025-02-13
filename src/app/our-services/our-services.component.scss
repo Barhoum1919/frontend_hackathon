@@ -1,0 +1,47 @@
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin-top: 20%;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-body ul {
+    flex-grow: 1;  /* Ensures the list of features grows to fill available space */
+  }
+  
+  .card-body .btn {
+    width: 100%;
+  }
+  
+  .list-unstyled {
+    padding-left: 0;
+  }
+  
+  .list-unstyled li {
+    margin: 5px 0;
+  }
+  

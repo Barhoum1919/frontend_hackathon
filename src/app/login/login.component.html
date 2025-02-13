@@ -1,0 +1,32 @@
+
+<div class="col-lg-4 col-md-12 wow fadeInUp" style="margin: 0 auto; margin-top: 8%;">
+    
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit()" >
+        <div class="row g-3">
+            <div class="col-md-12">
+                <h2 style="text-align: center;">Login to Your account!</h2>
+                <div class="form-floating field-animation" >
+                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter Your Email ">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-floating field-animation" >
+                    <input type="password" formControlName="password"  class="form-control" id="password" placeholder="Password">
+                    
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-danger w-100 py-3"  type="submit">Login</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <br>
+    <p style="margin-top: 2%;">Don't Have an Account? <a class="text-danger" routerLink="/register">Register</a> </p>
+</div>
+<br><br><br><br>

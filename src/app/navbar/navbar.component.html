@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0" >
+    <a routerLink="/"  class="nav-item nav-link  "  routerLinkActive="active" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h2 class="m-0 text-danger"><i class="fa bi bi-rocket-takeoff-fill m-1"></i>Boost Up </h2>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a  routerLink="/"  class="nav-item nav-link  " [routerLinkActiveOptions]="{exact: true}"  routerLinkActive="active">Home</a>
+            <a routerLink="dashboard"  *ngIf="isLoggedIn===true"  class="nav-item nav-link  " routerLinkActive="active">Dashboard</a>
+            <a routerLink="ourservices" class="nav-item nav-link " routerLinkActive="active">Services</a>
+            <a routerLink="chatbot"  *ngIf="isLoggedIn===true"  class="nav-item nav-link  " routerLinkActive="active">ChatBot</a>
+            <a routerLink="contact" class="nav-item nav-link " routerLinkActive="active">Contact</a>
+        </div>
+        <div class="btn-group" style=" padding:0%;" *ngIf="isLoggedIn===true" >
+            <a (click)="logout()" routerLink="login" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0;">
+                logOut <i class="fa fa-arrow-right ms-3"></i>
+              </a>
+        </div>
+        <!--<a  routerLink="register" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0;">
+          My Shopping <i class="fa bi bi-cart ms-3"></i>
+        </a>-->
+        <!-- Show "Join Now"  -->
+    <a  routerLink="register" *ngIf="isLoggedIn===false" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0;">
+       {{button}}<i class="fa fa-arrow-left ms-3"></i>
+      </a> 
+
+     <!-- "Logout" button based on button variable 
+      <div *ngIf="button === 'Logout'" class="dropdown">
+        <a class="btn btn-primary py-4 px-lg-5 d-none d-lg-block dropdown-toggle" 
+            role="button" data-bs-toggle="dropdown" 
+           aria-expanded="false" style="border-radius: 0;">
+          {{name}}
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="profile">MyProfile<i class="fa fa-user "></i></a></li>
+          <li><a class="dropdown-item" routerLink="login" (click)="logout()">Log out<i class="fa fa-arrow-right ms-2 "></i></a></li>
+        </ul>
+      </div>
+    -->
+          <!-- Show "Join Now" button if not logged in 
+          <a  (click)="logout()" routerLink="register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0 0 0;">
+            {{button}} <i class="fa fa-arrow-right ms-3"></i>
+        </a> -->
+        
+        <!-- Show "Log Out" button if logged in 
+        <a *ngIf="isLoggedIn==true" (click)="logOut()"  routerLink="login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0 0 0;">
+            Log Out <i class="fa fa-arrow-right ms-3"></i>
+        </a> -->
+    </div>
+</nav>
