@@ -75,10 +75,11 @@ export class DashboardComponent {
   loadUserData(): void {
     const token = localStorage.getItem('token');
     if (token) {
-      this.userService.getUser(token).subscribe({
+      this.userService.getUser().subscribe({
         next: (response: any) => {
-          if (response.userData && response.userData.length > 0) {
-            this.user = response.userData[0]; 
+          if (response.userData) {
+            this.user = response.userData; 
+            console.log("user: ", this.user);
           } else {
             this.errorMessage = 'No user data found.';
           }

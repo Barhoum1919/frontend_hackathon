@@ -38,16 +38,8 @@ export class LoginComponent implements OnInit {
           if (res && res.token){
             this.router.navigate(['/dashboard']);
           }
-          
-      }})
-      
+        }
+      })
+    }
   }
-}
-
-
-
-
-
-
-
 }
