@@ -41,11 +41,6 @@ export class LoginComponent implements OnInit {
           else{
             alert('Invalid credentials');
           }
-      
-        
-          
-      }})
-      
         }
       })
     }
