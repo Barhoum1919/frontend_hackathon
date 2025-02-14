@@ -41,6 +41,17 @@ export class DashboardComponent {
       comments: 40,
       shares: 20,
       uploadedAt: '2025-02-02T12:00:00Z'
+    },
+    {
+      id: '3',
+      title: 'Product Promotion 3',
+      videoUrl: 'https://www.youtube.com/embed/xyz123',
+      customerName: 'Customer B',
+      views: 2000,
+      likes: 250,
+      comments: 40,
+      shares: 20,
+      uploadedAt: '2025-02-02T12:00:00Z'
     }
   ];
   trendingVideos= [
@@ -58,6 +69,17 @@ export class DashboardComponent {
     {
       id: '2',
       title: 'Trend Video 2',
+      videoUrl: 'https://www.youtube.com/embed/xyz123',
+      customerName: 'Customer B',
+      views: 2000,
+      likes: 250,
+      comments: 40,
+      shares: 20,
+      uploadedAt: '2025-02-02T12:00:00Z'
+    },
+    {
+      id: '2',
+      title: 'Trend Video 3',
       videoUrl: 'https://www.youtube.com/embed/xyz123',
       customerName: 'Customer B',
       views: 2000,
@@ -125,4 +147,28 @@ export class DashboardComponent {
       );
     }
   }
+    // Call the scrape API
+      searchType: string = '';
+      searchQuery: string = '';
+      maxVideos: number = 10;
+      taskId: string = '';
+      status: string = '';
+    onScrape() {
+      const data = {
+        search_type: this.searchType,
+        search_query: this.searchQuery,
+        max_videos: this.maxVideos
+      };
+  
+      this.tiktokService.scrapeAndDownload(data).subscribe(response => {
+        this.taskId = response.id;
+      });
+    }
+  
+    // Call the status API
+    onGetStatus() {
+      this.tiktokService.getStatus(this.taskId).subscribe(response => {
+        this.status = response.status;
+      });
+    }
 }
