@@ -35,9 +35,14 @@ export class LoginComponent implements OnInit {
     if(this.loginform.valid){
       this.userservice.login(this.loginform.value).subscribe({
         next:(res:any)=>{
-          if (res && res.token){
+          if (res && res.token!==null){
             this.router.navigate(['/dashboard']);
           }
+          else{
+            alert('Invalid credentials');
+          }
+      
+        
           
       }})
       

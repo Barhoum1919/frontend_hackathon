@@ -1,17 +1,17 @@
 <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-6 mb-4" *ngFor="let subscription of subscriptions">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm" (click)="tosubscription(subscription)">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ subscription.name }}</h5>
             <p class="card-text">{{ subscription.description }}</p>
-            <h6 class="card-subtitle mb-2 text-muted">${{ subscription.price }} per month</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ subscription.price | currency }} per month</h6>
             <ul class="list-unstyled">
               <li *ngFor="let feature of subscription.features">
                 <i class="fa fa-check-circle text-success"></i> {{ feature }}
               </li>
             </ul>
-            <button class="btn btn-primary mt-auto">Subscribe</button>
+            <button class="btn btn-primary mt-auto">Click to view in details</button>
           </div>
         </div>
       </div>

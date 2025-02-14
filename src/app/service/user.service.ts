@@ -14,12 +14,14 @@ export class UserService {
   login(loginData: any): Observable<any> {
     return this.http.post(`http://127.0.0.1:8001/user/logIn?email=${loginData.email}&password=${loginData.password}`, null).pipe(
       tap((response:any) => {
+        if (response.token !== null )
+           {
         this.isLoggedInSubject.next(true);
         localStorage.setItem('token', response.token); 
         localStorage.setItem('isLoggedIn','true');
         localStorage.setItem('isLoggedOut','false');
         this.router.navigate(['/dashboard'])
-        
+      }
       }), 
       catchError(() => {
        

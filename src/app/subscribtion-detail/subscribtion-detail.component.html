@@ -1,1 +1,18 @@
-<p>subscribtion-detail works!</p>
+<div *ngIf="subscription; else noSelection" class="subscription-container">
+    <h2>Subscription Details</h2>
+    <p><strong>Name:</strong> {{ subscription.name }}</p>
+    <p><strong>Price:</strong> {{ subscription.price }} USD</p>
+  
+    <ul class="list-unstyled">
+      <li *ngFor="let feature of subscription.features">
+        <i class="fa fa-check-circle text-success"></i> {{ feature }}
+      </li>
+    </ul>
+  
+    <button class="btn btn-primary">Subscribe</button>
+  </div>
+  
+  <ng-template #noSelection>
+    <p class="no-subscription">No subscription selected.</p>
+  </ng-template>
+  
